@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>실기 정리.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="center-%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EB%8A%A5%EC%82%AC-%EC%8B%A4%EA%B8%B0-center"><center> <strong>정보처리기능사 실기</strong> <center/></h1>
+<br/>
+<h2 id="%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C"><strong>운영체제</strong></h2>
+<h1 id=""></h1>
+<blockquote>
+<p><code>운영체제의 목적</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">목적</th>
+<th style="text-align:center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">처리 능력</td>
+<td style="text-align:center">일정 시간 내에 시스템이 처리하는 일의 양</td>
+</tr>
+<tr>
+<td style="text-align:center">반환 시간</td>
+<td style="text-align:center">처리 완료까지 걸린 시간</td>
+</tr>
+<tr>
+<td style="text-align:center">사용 가능도</td>
+<td style="text-align:center">즉시 사용 가능한 정도</td>
+</tr>
+<tr>
+<td style="text-align:center">신뢰도</td>
+<td style="text-align:center">문제를 정확하게 해결하는 정도</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<blockquote>
+<p><code>운영체제의 종류</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">운영체제</th>
+<th style="text-align:center">특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Windows</td>
+<td style="text-align:center">선점형 멀티태스킹 운영체제 <br/>GUI 사용</td>
+</tr>
+<tr>
+<td style="text-align:center">UNIX</td>
+<td style="text-align:center">주로 서버에서 사용되는 시분할 시스템을 지원하는 운영체제 <br/>다중 사용자 멀티 태스킹의 운영체제</td>
+</tr>
+<tr>
+<td style="text-align:center">LINUX</td>
+<td style="text-align:center">유닉스를 기반으로 만들어진 운영체제 <br/>오픈소스의 운영체제로 사용자가 소스코드에 자유로운 접근이 가능</td>
+</tr>
+<tr>
+<td style="text-align:center">MS-DOS</td>
+<td style="text-align:center">문자 입력 인터페이스 CLI의 대표적인 운영체제</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<blockquote>
+<p><code>운영체제 운용 기법 발당과정</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">기법</th>
+<th style="text-align:center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">일괄 처리 시스템 <br/>(Batch Processing System)</td>
+<td style="text-align:center">일정 기간 또는 양의 데이터를 한번에 처리하는 방식</td>
+</tr>
+<tr>
+<td style="text-align:center">다중 프로그래밍 시스템 <br/>(Multi-Programming System)</td>
+<td style="text-align:center">하나의 CPU와 주기억장치를 이용하여 <br/>여러개의 프로그램을 동시에 처리하는 방식</td>
+</tr>
+<tr>
+<td style="text-align:center">시분할 시스템 <br/>(Time Sharing System)</td>
+<td style="text-align:center">여러 명의 사용자가 있는 시스템에서 <br/>사용자들의 프로그램을 번갈아 가면서 처리하는 방식</td>
+</tr>
+<tr>
+<td style="text-align:center">다중 처리 시스템 <br/>(Multi-Processing System)</td>
+<td style="text-align:center">여러개의 CPU와 하나의 주기억장치를 이용하여 <br/>여러개의 프로그램을 동시에 처리하는 방식</td>
+</tr>
+<tr>
+<td style="text-align:center">실시간 처리 시스템 <br/>(Real Time Processing System)</td>
+<td style="text-align:center">데이터 발생 또는 처리 요구가 있는 즉시 처리하는 방식</td>
+</tr>
+<tr>
+<td style="text-align:center">범용 시스템 <br/>(General-Purpose System)</td>
+<td style="text-align:center">일괄 처리, 시분할, 다중 처리, 실시간 처리 시스템을 모두 제공하는 방식 <br/>다중 모드 처리 시스템이라고도 함</td>
+</tr>
+<tr>
+<td style="text-align:center">분산 처리 시스템 <br/>(Distributed Processing System)</td>
+<td style="text-align:center">여러 개의 컴퓨터를 연결하여 하나의 작업을 처리하는 방식</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<blockquote>
+<p><code>Windows 단축키</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">키</th>
+<th style="text-align:center">기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Windows key + A</td>
+<td style="text-align:center">알림 센터 실행</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + B</td>
+<td style="text-align:center">알림 영역으로 포커스를 옮김</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + Alt + D</td>
+<td style="text-align:center">화면에 날짜 및 시간을 표시 &amp; 숨김</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + E</td>
+<td style="text-align:center">파일 탐색기 실행</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + F</td>
+<td style="text-align:center">피드백 허브 실행</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + I</td>
+<td style="text-align:center">설정 창 실행</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + K</td>
+<td style="text-align:center">연결 바로가기 표시</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + P</td>
+<td style="text-align:center">프로젝트 창 표시</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + Ctrl + Q</td>
+<td style="text-align:center">빠른 지원 실행</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + S</td>
+<td style="text-align:center">검색 상자 표시</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + T</td>
+<td style="text-align:center">작업 표시줄 앱 차례대로 선택</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + U</td>
+<td style="text-align:center">접근성 창 표시</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + X</td>
+<td style="text-align:center">바로 가기 메뉴 표시</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + ,</td>
+<td style="text-align:center">모든 창 투명화</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows key + Puase</td>
+<td style="text-align:center">시스템 창 표시</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<blockquote>
+<p><code>UNIX 시스템 구성</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">요소</th>
+<th style="text-align:center">특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">커널 (Kernel)</td>
+<td style="text-align:center">스케줄링, 기억장치 관리, 입•출력 관리 (암튼 중요한 놈)</td>
+</tr>
+<tr>
+<td style="text-align:center">쉘 (Shell)</td>
+<td style="text-align:center">명령어 해석 후 커널에게 전달하는 인터프린터 (명령어 해석기)</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<blockquote>
+<p><code>명령어</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">기능</th>
+<th style="text-align:center">Windows &amp; MS-DOS</th>
+<th style="text-align:center">UNIX &amp; LINUX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">디렉토리 위치 변경</td>
+<td style="text-align:center">cd</td>
+<td style="text-align:center">cd</td>
+</tr>
+<tr>
+<td style="text-align:center">파일 목록 표시</td>
+<td style="text-align:center">dir</td>
+<td style="text-align:center">ls</td>
+</tr>
+<tr>
+<td style="text-align:center">디렉토리 생성</td>
+<td style="text-align:center">md</td>
+<td style="text-align:center">mkdir</td>
+</tr>
+<tr>
+<td style="text-align:center">파일 속성 변경</td>
+<td style="text-align:center">attirb</td>
+<td style="text-align:center">chmod</td>
+</tr>
+<tr>
+<td style="text-align:center">파일 내용 표시</td>
+<td style="text-align:center">type</td>
+<td style="text-align:center">cat</td>
+</tr>
+<tr>
+<td style="text-align:center">이름 변경</td>
+<td style="text-align:center">ren</td>
+<td style="text-align:center">mv</td>
+</tr>
+<tr>
+<td style="text-align:center">파일 이동</td>
+<td style="text-align:center">move</td>
+<td style="text-align:center">mv</td>
+</tr>
+<tr>
+<td style="text-align:center">파일 삭제</td>
+<td style="text-align:center">del</td>
+<td style="text-align:center">rm</td>
+</tr>
+<tr>
+<td style="text-align:center">파일 복사</td>
+<td style="text-align:center">copy</td>
+<td style="text-align:center">cp</td>
+</tr>
+<tr>
+<td style="text-align:center">파일 열기</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">open</td>
+</tr>
+<tr>
+<td style="text-align:center">파일/디렉토리 <br/>소유권 변경</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">chown</td>
+</tr>
+<tr>
+<td style="text-align:center">달력</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">cal</td>
+</tr>
+<tr>
+<td style="text-align:center">파일 체크 &amp; 수리</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">fsck</td>
+</tr>
+<tr>
+<td style="text-align:center">파일 정령</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">sort</td>
+</tr>
+<tr>
+<td style="text-align:center">현재 위치한 <br/>디렉토리 경로 출력</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">pwd</td>
+</tr>
+</tbody>
+</table>
+ <br/>
+<blockquote>
+<p><code>기억장치 관리 전략</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">전략</th>
+<th style="text-align:center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">반입 전략</td>
+<td style="text-align:center">보조기억장치의 데이터를 <br/>언제 주기억장치로 적재할 것인지 결정하는 전략</td>
+</tr>
+<tr>
+<td style="text-align:center">배치 전략</td>
+<td style="text-align:center">새로 반입되는 데이터를 <br/>주기억장치 어디에 위치시킬 것인지 결정하는 전략</td>
+</tr>
+<tr>
+<td style="text-align:center">교체 전략</td>
+<td style="text-align:center">주기억장치의 모든 영역이 이미 사용중인 상태에서 <br/>새로운 데이터를 배치하려 할 때 어느 영역과 교체할지 결정하는 전략</td>
+</tr>
+</tbody>
+</table>
+ <br/>
+<blockquote>
+<p><code>스케줄링</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">스케줄링</th>
+<th style="text-align:center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">선점 스케줄링</td>
+<td style="text-align:center">이미 실행중임에도 우선 순위가 높은 프로세스가 <br/>CPU를 강제로 빼앗아 사용할 수 있는 기법</td>
+</tr>
+<tr>
+<td style="text-align:center">비선점 스케줄링</td>
+<td style="text-align:center">다른 프로세스가 CPU를 빼앗을 수 없는 기법</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h2 id="%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4"><strong>데이터베이스</strong></h2>
+<h1 id=""></h1>
+<blockquote>
+<p><code>데이터베이스</code></p>
+</blockquote>
+<ul>
+<li>특정 조직이 업무를 수행하는 데 필요한 데이터들의 모임
+<br/></li>
+</ul>
+<blockquote>
+<p><code>데이터베이스 설계</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">순서</th>
+<th style="text-align:center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">요구 조건 분석</td>
+<td style="text-align:center">요구 조건 명세서 작성</td>
+</tr>
+<tr>
+<td style="text-align:center">개념적 설계</td>
+<td style="text-align:center">개념 스키마, 트랜잭션 모델링, E-R 모델</td>
+</tr>
+<tr>
+<td style="text-align:center">논리적 설계</td>
+<td style="text-align:center">논리 스키마 설계, 트랜잭션 인터페이스 설계</td>
+</tr>
+<tr>
+<td style="text-align:center">물리적 설계</td>
+<td style="text-align:center">물리적 구조의 데이터로 변환</td>
+</tr>
+<tr>
+<td style="text-align:center">구현</td>
+<td style="text-align:center">DDL로 데이터베이스 생성, 트랜잭션 생성</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<blockquote>
+<p><code>스키마</code></p>
+</blockquote>
+<ul>
+<li>데이터베이스를 구성하는 개체, 속성, 관계 등 구조에 대한 정의와 이에 대한 제약 조건들을 기술한 것</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">스키마</th>
+<th style="text-align:center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">외부 스키마</td>
+<td style="text-align:center">사용자나 응용 프로그래머가 각 개인의 입장에서 <br/>필요로 하는 데이터베이스를 논리적 구조로 정의한 것</td>
+</tr>
+<tr>
+<td style="text-align:center">개념 스키마</td>
+<td style="text-align:center">데이터베이스의 전체적인 논리적 구조</td>
+</tr>
+<tr>
+<td style="text-align:center">내부 스키마</td>
+<td style="text-align:center">데이터베이스의 물리적 구조 <br/>데이터들의 실제 저장 방법을 기술한다</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<blockquote>
+<p><code>데이터베이스 사용자</code></p>
+</blockquote>
+<ul>
+<li>데이터베이스 관리자(DBA)
+<ul>
+<li>데이터베이스 시스템을 관리하고 운영한다</li>
+</ul>
+</li>
+<li>응용 프로그래머
+<ul>
+<li>일반 사용자가 응용 프로그램을 사용할 수 있도록 인터페이스를 제공할 목적으로 데이터베이스에 접근한다</li>
+</ul>
+</li>
+<li>일반 사용자
+<ul>
+<li>데이터베이스에 있는 자우너을 활용할 목적으로 응용 프로그램을 사용하여 데이터베이스에 접근한다</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><code>DBMS</code></p>
+</blockquote>
+<ul>
+<li>데이터베이스를 관리해 주는 소프트웨어</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">종류</th>
+<th style="text-align:center">특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">계층형 DBMS</td>
+<td style="text-align:center">트리구조, 부모 자식 관계, 일 대 다 관계만 존재</td>
+</tr>
+<tr>
+<td style="text-align:center">계층형 DBMS</td>
+<td style="text-align:center">그래프를 이용한 구조, 1:1 1:N N:N 모든 관계 존재</td>
+</tr>
+<tr>
+<td style="text-align:center">계층형 DBMS</td>
+<td style="text-align:center">2차원적인 표 구조, 테이블 내 속성의 관계를 설정하여 이용</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<blockquote>
+<p><code>용어 설명</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">용어</th>
+<th style="text-align:center">뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">개체 <br/>(Entity)</td>
+<td style="text-align:center">데이터베이스에 표현하려는 것 <br/>개념, 정보 단위같은 대상체를 의미한다</td>
+</tr>
+<tr>
+<td style="text-align:center">관계 <br/>(Relationship)</td>
+<td style="text-align:center">두 개 이상의 개체 간의 연관성 <br/>게체간의 관계 또는 속성간의 관계를 나타낸다</td>
+</tr>
+<tr>
+<td style="text-align:center">튜플 <br/>(Tuple)</td>
+<td style="text-align:center">테이블에서의 행, 레코드라고도 불린다</td>
+</tr>
+<tr>
+<td style="text-align:center">카디널리티 <br/>(Cardinality)</td>
+<td style="text-align:center">튜플의 수, 기수 대응수라고도 불린다</td>
+</tr>
+<tr>
+<td style="text-align:center">속성 <br/>(Attribute)</td>
+<td style="text-align:center">테이블에서의 열, 데이터 항목 또는 필드의 값</td>
+</tr>
+<tr>
+<td style="text-align:center">차수 <br/>(Degree)</td>
+<td style="text-align:center">속성의 수</td>
+</tr>
+<tr>
+<td style="text-align:center">도메인 <br/>(Domain)</td>
+<td style="text-align:center">하나의 속성이 취할 수 있는 값의 범위</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>키 (Key)</code></p>
+</blockquote>
+<ul>
+<li>데이터 베이스에서 조건에 만족하는 튜플을 찾거나 순서대로 정렬할 때 기준이 되는 속성</li>
+<li>유일성
+<ul>
+<li>하나의 키 값으로 하나의 튜플만을 검색할 수 있는 성질</li>
+</ul>
+</li>
+<li>최소성
+<ul>
+<li>키를 구성하는 속성들 중 꼭 필요한 최소한의 속성들로만 키를 구성하는 성질</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">키</th>
+<th style="text-align:center">조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">슈퍼키 <br/>(Super Key)</td>
+<td style="text-align:center">유일성은 만족하되 최소성은 만족하지 못한다</td>
+</tr>
+<tr>
+<td style="text-align:center">후보키 <br/>(Candidate Key)</td>
+<td style="text-align:center">유일성과 최소성을 모두 만족한다</td>
+</tr>
+<tr>
+<td style="text-align:center">기본키 <br/>(Primary Key)</td>
+<td style="text-align:center">후보키들 중 하나, NULL값을 가질 수 없다</td>
+</tr>
+<tr>
+<td style="text-align:center">대체키 <br/>(Altermate Key)</td>
+<td style="text-align:center">기본키를 제외한 후보키들</td>
+</tr>
+<tr>
+<td style="text-align:center">외래키 <br/>(Foreign Key)</td>
+<td style="text-align:center">다른 테이블의 기본키를 참조하는 속성</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<blockquote>
+<p><code>무결성</code></p>
+</blockquote>
+<ul>
+<li>무결성
+<ul>
+<li>데이터베이스의 값과 그것이 표현하는 현실 세계의 실제값이 일치하는 정확성</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">종류</th>
+<th style="text-align:center">특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">개체 무결성</td>
+<td style="text-align:center">테이블의 기본키를 구성하는 어떤 속성도 <br/>Null값이나 중복값을 가질 수 없다는 규정</td>
+</tr>
+<tr>
+<td style="text-align:center">도메인 무결성</td>
+<td style="text-align:center">주어진 속성 값이 <br/>정의된 도메인에 속한 값이어여 한다는 규정</td>
+</tr>
+<tr>
+<td style="text-align:center">참조 무결성</td>
+<td style="text-align:center">기본키와 참조키의 관계가 항상 유지되어야 한다는 규정</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<blockquote>
+<p><code>기타 기능</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">기능</th>
+<th style="text-align:center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">뷰 <br/>(View)</td>
+<td style="text-align:center">자료 조회 위한 가상 테이블</td>
+</tr>
+<tr>
+<td style="text-align:center">인덱스 <br/>(Index)</td>
+<td style="text-align:center">데이터 검색 시간을 단축시키기 위한 <br/>보조적인 데이터 구조</td>
+</tr>
+<tr>
+<td style="text-align:center">시스템 카탈로그 <br/>(System Catalog)</td>
+<td style="text-align:center">시스템 그 자체에 관련이 있는 <br/>객체에 관한 정보를 포함하는 시스템 데이터베이스 <br/>데이터 사전이라고도 한다</td>
+</tr>
+<tr>
+<td style="text-align:center">트랜잭션 <br/>(Transaction)</td>
+<td style="text-align:center">데이터베이스에서의 작업 단위</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h2 id="%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC"><strong>네트워크</strong></h2>
+<h1 id=""></h1>
+<br/>
+<h2 id="%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%ED%85%8C%EC%8A%A4%ED%8A%B8"><strong>애플리케이션 테스트</strong></h2>
+<h1 id=""></h1>
+<br/>
+<h2 id="sql"><strong>SQL</strong></h2>
+<h1 id=""></h1>
+
+</body>
+</html>
