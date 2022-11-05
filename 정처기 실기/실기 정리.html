@@ -695,11 +695,11 @@ code {
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">선점 스케줄링</td>
+<td style="text-align:center">선점형 스케줄링</td>
 <td style="text-align:center">이미 실행중임에도 우선 순위가 높은 프로세스가 <br/>CPU를 강제로 빼앗아 사용할 수 있는 기법</td>
 </tr>
 <tr>
-<td style="text-align:center">비선점 스케줄링</td>
+<td style="text-align:center">비선점형 스케줄링</td>
 <td style="text-align:center">다른 프로세스가 CPU를 빼앗을 수 없는 기법</td>
 </tr>
 </tbody>
@@ -1230,7 +1230,7 @@ code {
 <td style="text-align:center">동일한 테스트 케이스에 의한 반복적 테스트로 <br/>새로운 버그를 찾지 못하는 내성 현상</td>
 </tr>
 <tr>
-<td style="text-align:center">테스팅은 정황의 의존</td>
+<td style="text-align:center">정황 의존성</td>
 <td style="text-align:center">테스트는 그 대상에 따라 다르게 수행되어야 한다</td>
 </tr>
 <tr>
@@ -1312,11 +1312,11 @@ code {
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">명세 기반 테스트</td>
+<td style="text-align:center">명세 기반 테스트 <br/>(블랙박스 테스트)</td>
 <td style="text-align:center">요구사항에 대한 테스트 케이스로 검사하는 테스트</td>
 </tr>
 <tr>
-<td style="text-align:center">구조 기반 테스트</td>
+<td style="text-align:center">구조 기반 테스트 <br/>(화이트박스 테스트)</td>
 <td style="text-align:center">내부 논리 흐름에 따른 테스트 케이스로 검사하는 테스트</td>
 </tr>
 <tr>
@@ -1372,6 +1372,10 @@ code {
 <td style="text-align:center">과부하 시에도 정상적으로 실행되는지에 대한 테스트</td>
 </tr>
 <tr>
+<td style="text-align:center">내구성 테스트</td>
+<td style="text-align:center">오랜 시간 동안 높은 부하를 가해 시스템 반응을 확인하는 테스트</td>
+</tr>
+<tr>
 <td style="text-align:center">성능 테스트</td>
 <td style="text-align:center">효율성에 대한 테스트 <br/>(응답 시간, 처리량)</td>
 </tr>
@@ -1391,7 +1395,7 @@ code {
 </table>
 <br/>
 <blockquote>
-<p><code>화이트박스 테스트</code></p>
+<p><code>화이트박스 테스트 (구조 기반 테스트)</code></p>
 </blockquote>
 <ul>
 <li>코드를 오픈시킨 상태에서 논리적인 경로를 확인하는 테스트</li>
@@ -1416,7 +1420,7 @@ code {
 </table>
 <br/>
 <blockquote>
-<p><code>블랙박스 테스트</code></p>
+<p><code>블랙박스 테스트 (명세 기반 테스트)</code></p>
 </blockquote>
 <ul>
 <li>코드를 열지 않은 상태에서 기능을 확인하는 테스트</li>
@@ -1430,7 +1434,7 @@ code {
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">동치 분할 검사</td>
+<td style="text-align:center">동치 분할 검사 <br/>(동등 분할 검사, 균등 분할 검사)</td>
 <td style="text-align:center">입력에 따라 맞는 결과가 출력됐는지 확인하는 테스트</td>
 </tr>
 <tr>
@@ -1538,8 +1542,9 @@ code {
 </tbody>
 </table>
 <br/>
-<h2 id="sql"><strong>SQL</strong></h2>
+<h2 id="%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EA%B2%B0%ED%95%A8-%EC%A1%B0%EC%B9%98"><strong>애플리케이션 결함 조치</strong></h2>
 <h1 id=""></h1>
+<h1 id="center---%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94%EB%8B%A4---center"><center> <strong>- 하지 않는다 -</strong> <center/></h1>
 
 </body>
 </html>
