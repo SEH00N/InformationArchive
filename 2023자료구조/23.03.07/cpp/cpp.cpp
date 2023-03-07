@@ -68,7 +68,7 @@ int main()
 	
 #pragma endregion
 
-#pragma region 문자 위치 찾기
+#pragma region 도전1 문자 위치 찾기
 
 	//string str = "When in rome, do as the Romans.";
 
@@ -76,7 +76,7 @@ int main()
 
 #pragma endregion
 
-#pragma region 특정 문자 삭제하기
+#pragma region 도전2 특정 문자 삭제하기
 
 	//string id;
 	//
@@ -89,44 +89,59 @@ int main()
 
 #pragma endregion
 
-#pragma region 해밍 거리 구하기
+#pragma region 도전3 해밍 거리 구하기
 
-	int cnt = 0;
-	string dna1, dna2;
+	//int cnt = 0;
+	//string dna1, dna2;
 
-	cout << "DNA1 : ";
-	getline(cin, dna1);
+	//cout << "DNA1 : ";
+	//getline(cin, dna1);
 
-	cout << "DNA2 : ";
-	getline(cin, dna2);
+	//cout << "DNA2 : ";
+	//getline(cin, dna2);
 
-	for (int i = 0; i < dna1.size(); i++)
-		if (dna1.at(i) == dna2.at(i))
-			cnt++;
+	//for (int i = 0; i < dna1.size(); i++)
+	//	if (dna1.at(i) != dna2.at(i))
+	//		cnt++;
 
-	cout << "해밍거리 : " << cnt;
+	//cout << "해밍거리 : " << cnt;
 
 #pragma endregion
 
+#pragma region 도전4 행맨
 
-	//int n;
-	//long double result = 0;
+	srand((unsigned int)time(NULL));
 
-	//cin >> n;
+	string words[] = { "junseong", "sehoon", "minsung" };
+	string randomWord = words[rand() % (sizeof(words) / sizeof(string))];
+	string answer;
+	char input;
 
-	//if (n == 1)
-	//	cout << 1;
-	//else
-	//{
-	//	result = (n + 1) * n * 0.5;
-	//	cout << result;
-	//}
+	for (int i = 0; i < randomWord.size(); i++)
+		answer.push_back('_');
 
-	//for (int i = 1; i < n + 1; i++)
-	//	result += i;
+	while (answer != randomWord)
+	{
+		cout << '\n' << answer << "\n\n";
 
-	//cout << endl;
-	//cout << result;
+		cout << "글자를 입력해주세요 : ";
+		cin >> input;
+
+		size_t inputLetterPos = randomWord.find(input);
+		if (inputLetterPos != string::npos)
+		{
+			randomWord[inputLetterPos] = '\0';
+			answer[inputLetterPos] = input;
+		}
+
+		if (answer.find('_') == string::npos)
+			break;
+	}
+
+	cout << '\n' << answer << '\n';
+	cout << "\n정답!!";
+
+#pragma endregion
 
 	return 0;
 }
