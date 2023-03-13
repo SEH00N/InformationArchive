@@ -11,7 +11,7 @@ int main()
 	{
 		//iNansu = rand();
 		//iNansu = rand() % 52;
-		iNansu = rand() % 21 + 10; //10 ~ 30
+		iNansu = rand() % 21 + 10; //10 ~ 30 -> 0 ~ 20 + 10
 
 		cout << iNansu << endl;
 	}
