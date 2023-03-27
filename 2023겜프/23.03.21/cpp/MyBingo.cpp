@@ -74,6 +74,13 @@ public:
 			if (iInput == iNumber[i])
 				iNumber[i] = INT_MAX;
 	}
+
+	void Update(int _iInput)
+	{
+		for (int i = 0; i < 25; i++)
+			if (_iInput == iNumber[i])
+				iNumber[i] = INT_MAX;
+	}
 	
 	void Render()
 	{
@@ -204,9 +211,11 @@ int main()
 
 		player.Update();
 		player.CountBingo();
+		ai.GetGame().Update(player.iInput);
 
 		ai.DecideInput();
 		ai.ApplyInput();
+		player.Update(ai.GetGame().iInput);
 	}
 
 	return 0;
