@@ -130,7 +130,11 @@
     <ClInclude Include="퍼즐게임cpp.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bingo.cpp" />
+    <ClCompile Include="bingo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="BingoComponent.h" />
+    <ClCompile Include="MyBingo.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

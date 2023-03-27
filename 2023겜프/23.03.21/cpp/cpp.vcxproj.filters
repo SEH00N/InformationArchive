@@ -23,5 +23,11 @@
     <ClCompile Include="bingo.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BingoComponent.h">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MyBingo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

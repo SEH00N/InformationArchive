@@ -10,8 +10,6 @@ void Init(int* _pNumber)
 	for (int i = 0; i < 25; i++)
 		_pNumber[i] = i + 1;
 
-	_pNumber[24] = INT_MAX;
-
 	int iTemp, idx1, idx2;
 	for (int i = 0; i < 100; i++)
 	{
