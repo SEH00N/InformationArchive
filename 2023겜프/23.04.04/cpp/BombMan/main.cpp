@@ -6,11 +6,18 @@ using namespace std;
 
 int main()
 {
-	FullScreen();
-	//system("title ¿ì¸¶¾Æ¾ÆÀ×");
-	//system("mode con cols=5 lines=10");
+	cout << "Àß»ý°å´Ù °­¹Î¼º\n";
+	
+	Go2xy(10, 10);
+	ConsoleCursor(false, 1);
 
-	int a = 0;
+	Sleep(1000);
+
+	SetColor((int)COLOR::BLACK, (int)COLOR::WHITE);
+
+	cout << "¤·¤¸¤·¤¸\n";
+
+	int a;
 	cin >> a;
 
 	return 0;
