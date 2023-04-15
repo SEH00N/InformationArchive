@@ -1,4 +1,4 @@
 #pragma once
 
 void AsciiArt();
-void GameMenu();
+void MenuSelectCursor();
