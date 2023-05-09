@@ -98,7 +98,6 @@ void Update(char _cMaze[VERTICAL][HORIZONTAL], PPLAYER _pPlayer, vector<BOOM>& _
 
 	//if (_pPlayer->tNewPos.y < VERTICAL && _pPlayer->tNewPos.y >= 0 && _pPlayer->tNewPos.x < HORIZONTAL - 1 && _pPlayer->tNewPos.x >= 0)
 	//if (_cMaze[_pPlayer->tNewPos.y][_pPlayer->tNewPos.x] != (char)MAPTYPE::WALL && _cMaze[_pPlayer->tNewPos.y][_pPlayer->tNewPos.x] != (char)MAPTYPE::WATERBOMB)
-		
 
 	if (_cMaze[_pPlayer->tNewPos.y][_pPlayer->tNewPos.x] == (char)MAPTYPE::WALL)
 	{
