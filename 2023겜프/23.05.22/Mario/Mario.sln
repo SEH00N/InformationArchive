@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mario", "Mario\Mario.vcxproj", "{480C8285-9675-41BE-9C42-B0CE8D8F237D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{480C8285-9675-41BE-9C42-B0CE8D8F237D}.Debug|x64.ActiveCfg = Debug|x64
+		{480C8285-9675-41BE-9C42-B0CE8D8F237D}.Debug|x64.Build.0 = Debug|x64
+		{480C8285-9675-41BE-9C42-B0CE8D8F237D}.Debug|x86.ActiveCfg = Debug|Win32
+		{480C8285-9675-41BE-9C42-B0CE8D8F237D}.Debug|x86.Build.0 = Debug|Win32
+		{480C8285-9675-41BE-9C42-B0CE8D8F237D}.Release|x64.ActiveCfg = Release|x64
+		{480C8285-9675-41BE-9C42-B0CE8D8F237D}.Release|x64.Build.0 = Release|x64
+		{480C8285-9675-41BE-9C42-B0CE8D8F237D}.Release|x86.ActiveCfg = Release|Win32
+		{480C8285-9675-41BE-9C42-B0CE8D8F237D}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {427B5B9E-5AFC-44C7-88F2-6AE18B669B07}
+	EndGlobalSection
+EndGlobal
