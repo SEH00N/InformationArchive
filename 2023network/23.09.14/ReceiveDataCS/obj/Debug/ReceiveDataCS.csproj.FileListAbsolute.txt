@@ -1,0 +1,15 @@
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\bin\Debug\ReceiveDataCS.exe.config
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\bin\Debug\ReceiveDataCS.exe
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\bin\Debug\ReceiveDataCS.pdb
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\bin\Debug\SendDataCS.exe
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\bin\Debug\SendDataCS.pdb
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\bin\Debug\SendDataCS.exe.config
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\obj\Debug\ReceiveDataCS.csproj.AssemblyReference.cache
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\obj\Debug\ReceiveDataCS.csproj.SuggestedBindingRedirects.cache
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\obj\Debug\ReceiveDataCS.Form1.resources
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\obj\Debug\ReceiveDataCS.Properties.Resources.resources
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\obj\Debug\ReceiveDataCS.csproj.GenerateResource.cache
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\obj\Debug\ReceiveDataCS.csproj.CoreCompileInputs.cache
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\obj\Debug\ReceiveDataCS.csproj.CopyComplete
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\obj\Debug\ReceiveDataCS.exe
+D:\GitHub\InformationArchive\2023network\23.09.14\ReceiveDataCS\obj\Debug\ReceiveDataCS.pdb

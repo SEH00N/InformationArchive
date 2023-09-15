@@ -103,9 +103,6 @@ void Update(float dt)
 			dirVector.x = round(dirVector.x / magnitude);
 			dirVector.y = round(dirVector.y / magnitude);
 
-            //ggmPos.x += dirVector.x * speed * dt;
-            //ggmPos.y += dirVector.y * speed * dt;
-
             ggmPos.x += dirVector.x * speed * ceil(dt);
             ggmPos.y += dirVector.y * speed * ceil(dt);
 

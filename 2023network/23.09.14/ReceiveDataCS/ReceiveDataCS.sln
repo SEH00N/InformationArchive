@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiveDataCS", "ReceiveDataCS.csproj", "{BD482598-1B61-4EA9-BC09-778F54A480AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD482598-1B61-4EA9-BC09-778F54A480AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD482598-1B61-4EA9-BC09-778F54A480AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD482598-1B61-4EA9-BC09-778F54A480AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD482598-1B61-4EA9-BC09-778F54A480AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {807CE82F-7E7A-4732-8112-4AE074F4ED98}
+	EndGlobalSection
+EndGlobal
