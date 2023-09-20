@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{88bcbe50-4b99-42df-ad7f-fab92bfc7e28}</ProjectGuid>
-    <RootNamespace>ChasingGamee</RootNamespace>
+    <ProjectGuid>{7ea16f1a-9158-47fb-b9fb-82ca6d049272}</ProjectGuid>
+    <RootNamespace>H00NFramework</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,19 +127,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ChasingGamee.h" />
+    <ClInclude Include="define.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="H00NFramework.h" />
+    <ClInclude Include="KeyManager.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TimeManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ChasingGamee.cpp" />
+    <ClCompile Include="Core.cpp" />
+    <ClCompile Include="KeyManager.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="TimeManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ChasingGamee.rc" />
+    <ResourceCompile Include="H00NFramework.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="ChasingGamee.ico" />
+    <Image Include="H00NFramework.ico" />
     <Image Include="small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
