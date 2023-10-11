@@ -1,0 +1,15 @@
+D:\2023Network\2ndSem\SocketClass\chatServerCS202\obj\Debug\chatServerCS202.csprojAssemblyReference.cache
+D:\2023Network\2ndSem\SocketClass\chatServerCS202\obj\Debug\chatServerCS202.csproj.CoreCompileInputs.cache
+D:\2023Network\2ndSem\SocketClass\chatServerCS202\bin\Debug\chatServerCS202.exe.config
+D:\2023Network\2ndSem\SocketClass\chatServerCS202\bin\Debug\chatServerCS202.exe
+D:\2023Network\2ndSem\SocketClass\chatServerCS202\bin\Debug\chatServerCS202.pdb
+D:\2023Network\2ndSem\SocketClass\chatServerCS202\obj\Debug\chatServerCS202.exe
+D:\2023Network\2ndSem\SocketClass\chatServerCS202\obj\Debug\chatServerCS202.pdb
+D:\GitHub\InformationArchive\2023network\SUHANG\Server\bin\Debug\chatServerCS202.exe.config
+D:\GitHub\InformationArchive\2023network\SUHANG\Server\bin\Debug\chatServerCS202.exe
+D:\GitHub\InformationArchive\2023network\SUHANG\Server\bin\Debug\chatServerCS202.pdb
+D:\GitHub\InformationArchive\2023network\SUHANG\Server\obj\Debug\chatServerCS202.csproj.AssemblyReference.cache
+D:\GitHub\InformationArchive\2023network\SUHANG\Server\obj\Debug\chatServerCS202.csproj.SuggestedBindingRedirects.cache
+D:\GitHub\InformationArchive\2023network\SUHANG\Server\obj\Debug\chatServerCS202.csproj.CoreCompileInputs.cache
+D:\GitHub\InformationArchive\2023network\SUHANG\Server\obj\Debug\chatServerCS202.exe
+D:\GitHub\InformationArchive\2023network\SUHANG\Server\obj\Debug\chatServerCS202.pdb
