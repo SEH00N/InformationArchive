@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     private Image hpBar;
 
     private int hp = 0;
+    public int HP => hp;
 
     private float lastUpdateTime = 0;
 
@@ -27,8 +28,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(lastUpdateTime + 1f < Time.time)
         {
-            hp--;
-            hpBar.fillAmount = hp / (float)100;
+            FixHP(-1);
             lastUpdateTime = Time.time;
         }
     }
@@ -39,5 +39,17 @@ public class PlayerHealth : MonoBehaviour
         pos.y += 100f;
 
         hpBarTrm.position = pos;
+    }
+
+    public void SetHP(int hp)
+    {
+        this.hp = hp;
+        hpBar.fillAmount = hp / (float)100;
+    }
+
+    public void FixHP(int amount)
+    {
+        this.hp -= hp;
+        hpBar.fillAmount = hp / (float)100;
     }
 }
