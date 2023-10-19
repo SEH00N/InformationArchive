@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class UserControl : MonoBehaviour
 {
+    public string id;
+
     private PlayerMovement movement;
     private PlayerHealth health;
 

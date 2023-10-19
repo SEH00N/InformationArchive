@@ -33,5 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         targetPos = mainCam.ScreenToWorldPoint(pos);
         targetPos.z = 0;
+
+/        GameManager.Instance.SendCommand($"#Move#");
     }
 }

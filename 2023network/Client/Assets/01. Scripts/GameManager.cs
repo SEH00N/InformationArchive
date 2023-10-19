@@ -20,8 +20,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TMP_InputField nicknameField;
     [SerializeField] TMP_InputField chatField;
-    private string myID;
+    public string myID;
 
+    [SerializeField] UserControl playerPrefab;
     public UserControl userController;
 
     private Dictionary<string, UserControl> remoteUsers;
@@ -113,12 +114,17 @@ public class GameManager : MonoBehaviour
                         switch(command)
                         {
                             case "Enter":
+                                AddUser(id);
                                 break;
                             case "Move":
                                 break;
                             case "Left":
+                                UserLeft(id);
                                 break;
                             case "Heal":
+                                UserHeal(id);
+                                break;
+                            case "Damage":
                                 break;
                         }
                     }
@@ -135,9 +141,63 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void SetMove(string id, string cmdMove)
+    {
+        if(remoteUsers.ContainsKey(id) == false)
+            return;
+
+        string[] args = cmdMove.Split(',');
+
+        bool resultX = float.TryParse(args[0], out float x);
+        bool resultY = float.TryParse(args[1], out float y);
+        
+        if(resultX && resultY)
+            remoteUsers[id]?.SetTargetPos(new Vector3(x, y));
+    }
+
+    private void TakeDamage(string remain)
+    {
+        if(remoteUsers.ContainsKey(remain) == false && myID != remain)
+            return;
+
+        if(myID == remain)
+            userController.DropHP(10);
+        else
+            remoteUsers[remain]?.DropHP(10);
+    }
+
+    private void AddUser(string id)
+    {
+        if(remoteUsers.ContainsKey(id))
+            return;
+
+        UserControl otherPlayer = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+        otherPlayer.id = id;
+        remoteUsers.Add(id, otherPlayer);
+    }
+
+    private void UserLeft(string id)
+    {
+        if(remoteUsers.ContainsKey(id) == false)
+            return;
+
+        Destroy(remoteUsers[id].gameObject);
+        remoteUsers.Remove(id);
+    }
+
+    private void UserHeal(string id)
+    {
+        if(remoteUsers.ContainsKey(id) == false)
+            return;
+
+        remoteUsers[id]?.Revive();
+    }
+
     public void OnLogin()
     {
         myID = nicknameField.text;
+        userController.id = myID;
+
         if(myID.Length > 0)
         {
             SocketModule.Instance.Login(myID);
