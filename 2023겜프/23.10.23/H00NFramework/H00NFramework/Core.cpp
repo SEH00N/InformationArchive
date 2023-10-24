@@ -2,6 +2,7 @@
 #include "Core.h"
 #include "TimeManager.h"
 #include "KeyManager.h"
+#include "SceneManager.h"
 
 bool Core::Init(HWND hWnd, POINT resolution)
 {
@@ -18,13 +19,11 @@ bool Core::Init(HWND hWnd, POINT resolution)
 
 	SelectObject(hBackDC, hBackBitmap);
 
-	object.SetPosition(Vector2({ resolution.x / 2, resolution.y / 2 }));
-	object.SetScale({ 100, 100 });
-
 	// - manager init -
 
 	TimeManager::GetInstance()->Init();
 	KeyManager::GetInstance()->Init();
+	SceneManager::GetInstance()->Init();
 
 	return true;
 }
@@ -46,15 +45,7 @@ void Core::Update()
 {
 	TimeManager::GetInstance()->Update();
 	KeyManager::GetInstance()->Update();
-
-	Vector2 position = object.GetPosition();
-
-	if(GetKeyPress(KeyType::Left))
-		position.x -= 1000 * DeltaTime;
-	if (GetKeyPress(KeyType::Right))
-		position.x += 1000 * DeltaTime;
-
-	object.SetPosition(position);
+	SceneManager::GetInstance()->Update();
 }
 
 void Core::Render()
@@ -62,9 +53,7 @@ void Core::Render()
 	//Rectangle(hBackDC, -1, -1, resolution.x + 1, resolution.y + 1);
 	PatBlt(hBackDC, 0, 0, resolution.x, resolution.y, WHITENESS);
 
-	Vector2 pos = object.GetPosition();
-	Vector2 scale = object.GetScale();
-	RECT_RENDER(hBackDC, pos.x, pos.y, scale.x, scale.y);
+	SceneManager::GetInstance()->Render(hBackDC);
 
 	POINT mousepos = KeyManager::GetInstance()->GetMousePosition();
 	static wchar_t mousebuf[100] = {};

@@ -24,5 +24,4 @@ private:
 	HBITMAP	hBackBitmap;
 
 	POINT	resolution;
-	Object	object;
 };

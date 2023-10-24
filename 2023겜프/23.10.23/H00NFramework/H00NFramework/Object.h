@@ -6,6 +6,10 @@ public:
 	virtual ~Object();
 
 public:
+	virtual void Update();
+	virtual void Render(HDC hDC);
+
+public:
 	void SetPosition(Vector2 position) { this->position = position; }
 	void SetScale(Vector2 scale) { this->scale = scale; }
 

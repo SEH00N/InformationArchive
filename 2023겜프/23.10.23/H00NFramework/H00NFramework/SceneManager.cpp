@@ -1,5 +1,8 @@
 #include "pch.h"
 #include "SceneManager.h"
+#include "Scene.h"
+#include "StartScene.h"
+#include "GameScene.h"
 
 void SceneManager::RegisterScene(const std::wstring& sceneName, std::shared_ptr<Scene> scene)
 {
@@ -25,6 +28,11 @@ void SceneManager::LoadScene(const std::wstring& sceneName)
 void SceneManager::Init()
 {
 	currentScene = nullptr;
+
+	RegisterScene(L"StartScene", std::make_shared<StartScene>());
+	RegisterScene(L"GameScene", std::make_shared<GameScene>());
+
+	LoadScene(L"StartScene");
 }
 
 void SceneManager::Update()
