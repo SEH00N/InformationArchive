@@ -1,0 +1,8 @@
+D:\GitHub\InformationArchive\2023network\23.10.31\ChatServer\ChatServer\obj\Debug\ChatServer.csproj.AssemblyReference.cache
+D:\GitHub\InformationArchive\2023network\23.10.31\ChatServer\ChatServer\obj\Debug\ChatServer.csproj.SuggestedBindingRedirects.cache
+D:\GitHub\InformationArchive\2023network\23.10.31\ChatServer\ChatServer\obj\Debug\ChatServer.csproj.CoreCompileInputs.cache
+D:\GitHub\InformationArchive\2023network\23.10.31\ChatServer\ChatServer\bin\Debug\ChatServer.exe.config
+D:\GitHub\InformationArchive\2023network\23.10.31\ChatServer\ChatServer\bin\Debug\ChatServer.exe
+D:\GitHub\InformationArchive\2023network\23.10.31\ChatServer\ChatServer\bin\Debug\ChatServer.pdb
+D:\GitHub\InformationArchive\2023network\23.10.31\ChatServer\ChatServer\obj\Debug\ChatServer.exe
+D:\GitHub\InformationArchive\2023network\23.10.31\ChatServer\ChatServer\obj\Debug\ChatServer.pdb

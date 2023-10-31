@@ -55,7 +55,8 @@
         "ProjectSettings/": true,
         "temp/": true,
         "Temp/": true,
-        "*.csproj": true
+        "*.csproj": true,
+        "**/*.csproj": true
     },
     "explorerExclude.backup": {}
 }
