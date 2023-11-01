@@ -11,7 +11,7 @@
 Player::Player() : texture{nullptr}
 {
 	std::wstring filePath = PathManager::GetInstance()->GetResourcePath();
-	filePath += L"Texture\\plane.bmp";
+	filePath += L"Texture\\planem.bmp";
 	
 	texture = new Texture();
 	texture->Load(filePath);
@@ -45,12 +45,32 @@ void Player::Render(HDC hDC)
 	Vector2 pos = GetPosition();
 	Vector2 scale = GetScale();
 
-	BitBlt(
-		hDC, 
-		pos.x - scale.x / 2, pos.y - scale.y / 2, 
-		width, height, 
-		texture->GetDC(), 
-		0, 0, 
+	//BitBlt(
+	//	hDC, 
+	//	pos.x - scale.x / 2, pos.y - scale.y / 2, 
+	//	width, height, 
+	//	texture->GetDC(), 
+	//	0, 0, 
+	//	SRCCOPY
+	//);
+
+	//TransparentBlt(
+	//	hDC,
+	//	pos.x - scale.x / 2, pos.y - scale.y / 2,
+	//	width, height,
+	//	texture->GetDC(),
+	//	0, 0,
+	//	width, height,
+	//	RGB(255, 0, 255)
+	//);
+
+	StretchBlt(
+		hDC,
+		pos.x - scale.x / 2, pos.y - scale.y / 2,
+		width, height,
+		texture->GetDC(),
+		0, 0,
+		width, height,
 		SRCCOPY
 	);
 }

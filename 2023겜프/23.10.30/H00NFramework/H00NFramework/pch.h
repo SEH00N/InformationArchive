@@ -16,3 +16,4 @@
 #include "Vector2.h"
 #include "enums.h"
 
+#pragma comment (lib, "Msimg32.lib")
