@@ -1,5 +1,0 @@
-﻿  test.cpp
-D:\GitHub\InformationArchive\2023겜프\23.04.17\cpp\BombMan\test.cpp(2,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-D:\GitHub\InformationArchive\2023겜프\23.04.17\cpp\BombMan\test.cpp(3,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-D:\GitHub\InformationArchive\2023겜프\23.04.17\cpp\BombMan\test.cpp(4,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-  BombMan.vcxproj -> D:\GitHub\InformationArchive\2023겜프\23.04.17\cpp\x64\Debug\BombMan.exe

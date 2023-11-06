@@ -1,3 +1,0 @@
-﻿  2player.cpp
-D:\GitHub\InformationArchive\2023겜프\23.03.13\cpp\2player.cpp(49,15): warning C4244: '인수': 'float'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  cpp.vcxproj -> D:\GitHub\InformationArchive\2023겜프\23.03.13\cpp\x64\Debug\cpp.exe
