@@ -5,6 +5,7 @@
 #include "SceneManager.h"
 #include "PathManager.h"
 #include "ResManager.h"
+#include "CollisionManager.h"
 
 bool Core::Init(HWND hWnd, POINT resolution)
 {
@@ -56,6 +57,7 @@ void Core::Update()
 	TimeManager::GetInstance()->Update();
 	KeyManager::GetInstance()->Update();
 	SceneManager::GetInstance()->Update();
+	CollisionManager::GetInstance()->Update();
 }
 
 void Core::Render()

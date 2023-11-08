@@ -4,6 +4,7 @@
 #include "Object.h"
 #include "Player.h"
 #include "Monster.h"
+#include "CollisionManager.h"
 
 void StartScene::Init()
 {
@@ -29,6 +30,9 @@ void StartScene::Init()
 
 		this->AddObject(monster, ObjectGroup::Monster);
 	}
+
+	CollisionManager::GetInstance()->CheckGroup(ObjectGroup::Monster, ObjectGroup::Bullet);
+	CollisionManager::GetInstance()->CheckGroup(ObjectGroup::Monster, ObjectGroup::Player);
 }
 
 void StartScene::Update()
@@ -39,4 +43,10 @@ void StartScene::Update()
 void StartScene::Render(HDC hDC)
 {
 	this->Scene::Render(hDC);
+}
+
+void StartScene::Release()
+{
+	Scene::Release();
+	CollisionManager::GetInstance()->CheckReset();
 }
