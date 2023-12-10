@@ -7,13 +7,14 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AuthManager : Singleton<AuthManager>
 {
     [Header("Firebase")]
-    public FirebaseAuth auth; //ÀÎÁõ °ü¸® °´Ã¼
-    public FirebaseUser User; //»ç¿ëÀÚ
-    public DatabaseReference DBref; //µ¥ÀÌÅÍº£ÀÌ½º ÀÎ½ºÅÏ½º
+    public FirebaseAuth auth; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
+    public FirebaseUser User; //ï¿½ï¿½ï¿½ï¿½ï¿½
+    public DatabaseReference DBref; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½
 
     [Header("Login")]
     public TMP_InputField emailLoginField;
@@ -172,13 +173,14 @@ public class AuthManager : Singleton<AuthManager>
             Debug.Log($"User Signed in Successfully: {User.Email}, {User.DisplayName}");
             warningLoginText.text = "";
 
-            //°ª º¯°æµÉ ¶§ ¸¶´Ù ÀÌº¥Æ® È£Ãâ
+            //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® È£ï¿½ï¿½
             DBref.Child("users").Child(User.UserId).Child("LastLogin").ValueChanged += LoadLastLogin;
 
-            UIManager.Instance.CloseLogin();
+            // UIManager.Instance.CloseLogin();
             StartCoroutine(LoadUserName());
             StartCoroutine(SaveLoginData());
             StartCoroutine(LoadWeather());
+            SceneManager.LoadScene("GameScene");
         }
     }
 
@@ -222,7 +224,7 @@ public class AuthManager : Singleton<AuthManager>
                         Debug.Log($"Reward LoginDate Updated:{date}");
                     }
                 });
-            Debug.Log("º¸»ó ¹ÞÀ½");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
         }
 
     }
@@ -286,7 +288,7 @@ public class AuthManager : Singleton<AuthManager>
         return strWeather;
     }
 
-    //ÃÖÃÊ È¸¿ø°¡ÀÔ »ç¿ëÀÚ º¸»ó ÃÊ±âÈ­
+    //ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
     private IEnumerator SaveRewardData()
     {
         var DBTask = DBref.Child("users").Child(User.UserId).Child("RewardLogin")
