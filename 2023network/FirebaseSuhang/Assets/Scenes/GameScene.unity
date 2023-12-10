@@ -180,10 +180,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sdadsads
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1fa73e6af35a4ab4b9aeefa119cfc363, type: 2}
+  m_sharedMaterial: {fileID: 7264838132271277299, guid: 1fa73e6af35a4ab4b9aeefa119cfc363, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -472,6 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 886333081}
   - component: {fileID: 886333082}
+  - component: {fileID: 886333083}
   m_Layer: 0
   m_Name: Attendance
   m_TagString: Untagged
@@ -504,6 +505,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf7637fbfb48e5448be7e92813d042cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgrade: {fileID: 1823972288}
+  logText: {fileID: 366573603}
+--- !u!114 &886333083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886333080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc37068b521f054ca0d60b0d81ba1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: {fileID: 1823972288}

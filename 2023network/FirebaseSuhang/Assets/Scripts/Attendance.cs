@@ -24,6 +24,10 @@ public class Attendance : MonoBehaviour
             logText.text += $"{contAttendance}일 째 연속 접속 중!\n검 레벨 ${contAttendance}만큼 늘려드림";
             upgrade.SetLevel(contAttendance + 1);
         }
+        else
+        {
+            logText.text += $"내일도 접속 가자구~\n";
+        }
 
         PlayerPrefs.SetInt("Attendance", now);
     }

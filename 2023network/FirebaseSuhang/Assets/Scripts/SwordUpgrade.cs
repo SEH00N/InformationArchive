@@ -28,10 +28,10 @@ public class SwordUpgrade : MonoBehaviour
         level = i;
         percentage = 100f / (float)level;
 
-        levelText.text = $"Lv. {level} \n Top Level : {maxLevel} Lv";
-        percentageText.text = $"{percentage}%";
-        
         if(maxLevel < level)
             maxLevel = level;
+        
+        levelText.text = $"Lv. {level} \n Top Level : {maxLevel} Lv";
+        percentageText.text = $"{percentage}%";
     }
 }

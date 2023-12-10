@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -29,6 +30,8 @@ public class AuthManager : Singleton<AuthManager>
     public TMP_Text warningRegisterText;
 
     public TMP_Text userNameText;
+    public TMP_Text userInfoText;
+    public TMP_InputField friendField;
     private string strWeather;
     private string strLastLogin;
 
@@ -175,12 +178,20 @@ public class AuthManager : Singleton<AuthManager>
 
             //�� ����� �� ���� �̺�Ʈ ȣ��
             DBref.Child("users").Child(User.UserId).Child("LastLogin").ValueChanged += LoadLastLogin;
+            friendField.text = User.UserId;
 
-            // UIManager.Instance.CloseLogin();
-            StartCoroutine(LoadUserName());
-            StartCoroutine(SaveLoginData());
-            StartCoroutine(LoadWeather());
-            SceneManager.LoadScene("GameScene");
+            UIManager.Instance.CloseLogin();
+
+            var userTask = DBref.Child("users").GetValueAsync();
+            yield return new WaitUntil(() => userTask.IsCompleted);
+            StringBuilder infoBuilder = new StringBuilder();
+            foreach(var i in userTask.Result.Value as Dictionary<string, object>)
+                infoBuilder.Append($"{i.Key.ToString()}\n");
+            userInfoText.text = infoBuilder.ToString();
+            // StartCoroutine(LoadUserName());
+            // StartCoroutine(SaveLoginData());
+            // StartCoroutine(LoadWeather());
+            // SceneManager.LoadScene("GameScene");
         }
     }
 
@@ -325,4 +336,38 @@ public class AuthManager : Singleton<AuthManager>
         }
     }
 
+    public void ChangePassword()
+    {
+        if(emailLoginField.text.Contains('@'))
+            StartCoroutine(ChangePasswordCoroutine());
+        else
+            emailLoginField.text = "Enter Email Before Change Password";
+    }
+
+    private IEnumerator ChangePasswordCoroutine()
+    {
+        var task = auth.SendPasswordResetEmailAsync(emailLoginField.text);
+        yield return new WaitUntil(() => task.IsCompleted);
+        emailLoginField.text = "Check Email to Change Password";
+    }
+
+    public void AddFriend()
+    {
+        if(string.IsNullOrEmpty(friendField.text))
+            return;
+
+        StartCoroutine(AddFriendCoroutine());           
+    }
+
+    private IEnumerator AddFriendCoroutine()
+    {
+        var task = DBref.Child("users").Child(User.UserId).Child("Friends").GetValueAsync();
+        yield return new WaitUntil(() => task.IsCompleted);
+
+        var snapshot = task.Result;
+        if(snapshot.Value == null)
+            DBref.Child("users").Child(User.UserId).Child("Friends").SetValueAsync(friendField.text);
+        else if(task.Result.Value.ToString().Contains(friendField.text) == false)
+            DBref.Child("users").Child(User.UserId).Child("Friends").SetValueAsync($"{task.Result.Value.ToString()},{friendField.text}");
+    }
 }
